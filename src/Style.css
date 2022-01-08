@@ -1,3 +1,6 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .empty-state, ul:empty {
     display: none;
 }
@@ -36,7 +39,61 @@ ul:empty + .empty-state {
     width: 1px !important;
     overflow: hidden !important;
 }
-
 #heading-input {
+    border: transparent;
     font-size: 1.5em;
+    min-width: 400px;
+}
+h1 {
+    padding: 0 2px;
+    color: #444;
+    font-weight: 400;
+}
+form, h1{
+    min-height: 34px;
+    margin: 20px 0;
+}
+/**hide outline when focussing on heading**/
+[tabindex="-1"]:focus {
+    outline: 2px solid blue;
+}
+button {
+    border-radius: 2px;
+    padding: 4px 7px;
+    font-size: 18px;
+    margin-left: 7px;
+}
+button:not(.trash) {
+    color: #fff;
+    background: #515252;
+    border: 1px solid #515252;
+}
+button:not(.trash):disabled, input[aria-invalid] + button:not(.trash){
+    color: #fff;
+    background: #515252;
+    border: 1px solid #515252;  
+}
+input[aria-invalid=false] + button:not(.trash) {
+    color: #fff;
+    background: #004794;
+    border: 1px solid #004794;
+}
+button.trash {
+    color: #fff;
+    background: #004794;
+    border: 1px solid #004794;
+}
+.to-do-title {
+    display: none;
+}
+.visible {
+    display: block !important;
+}
+label {
+    font-size: 18px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+:checked + label {
+    text-decoration: line-through;
 }
