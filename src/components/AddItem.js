@@ -1,5 +1,6 @@
 import React, {useState, useRef} from "react";
-import ListItems from "./ListItems";
+import UnorderdList from "./UnorderedList";
+
 
 const AddItem = () => {
 //set form states
@@ -9,9 +10,14 @@ const [item, setItem]         = useState('');
 const [result, setResult]     = useState('');
 const [feedback, setFeedback] = useState('');
 
+
 //set references
 const inputRef = useRef();
 const formRef = useRef();
+
+//const keyRef = useRef();
+
+
 //an event handler to update the state so the user knows whether they can add the item to the list or not
 const onInputChange = (e) => {
         setValid(false); //set aria to valid for submittal
@@ -23,13 +29,20 @@ const onFormSubmit = (e) => {
     e.preventDefault();
     setResult(inputRef.current.value); //add the value of the input to the list
     setFeedback(`${inputRef.current.value} added`); //non visual feedback when list item added 
+    if(valid !== true) {
+        setValid(true);
+    }
+    if(disabled !== 'disabled') {
+        setDisabled('disabled');
+    }
+
 }
 
     return (
         <div>
-        <ListItems added={result} />
+        <UnorderdList results={result} />
         <form ref={formRef} onSubmit={onFormSubmit}>
-            <label htmlFor="add-to-do" className="visually-hidden"></label>
+            <label htmlFor="add-to-do" className="visually-hidden">Add List Item</label>
             <input type="text" ref={inputRef} value={item} onChange={onInputChange} id="add" placeholder="E.g. My first to do item" aria-invalid={valid} />
             <button type="submit"  disabled={disabled}>Add</button>
         </form>
