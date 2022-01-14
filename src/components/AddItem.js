@@ -45,7 +45,7 @@ const onFormSubmit = (e) => {
     return (
         <div>
         <UnorderdList results={result} />
-        <form ref={formRef} onSubmit={onFormSubmit}>
+        <form className="add-item-form" ref={formRef} onSubmit={onFormSubmit}>
             <label htmlFor="add-to-do" className="visually-hidden">Add List Item</label>
             <input type="text" ref={inputRef} value={item} onChange={onInputChange} id="add" placeholder="E.g. My first to do item" aria-invalid={valid} />
             <button type="submit"  disabled={disabled}>Add</button>

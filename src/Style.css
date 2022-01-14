@@ -43,6 +43,7 @@ ul:empty + .empty-state {
     border: transparent;
     font-size: 1.5em;
     min-width: 400px;
+    border-bottom: 2px solid black;
 }
 h1 {
     padding: 0 2px;
@@ -96,4 +97,24 @@ label {
 }
 :checked + label {
     text-decoration: line-through;
+}
+input[type="checkbox"], input:visited {
+    background-color: #fff;
+    height: 18px;
+    width: 18px;
+    appearance: none;
+    border: 2px solid #000;
+    vertical-align: text-top;
+}
+input[type="checkbox"]:focus-visible, input[type="checkbox"]:focus, :checked {
+    appearance: auto;
+}
+form.add-item-form {
+    padding-left: 44px;
+}
+input[type="text"] {
+    background-color: #fff;
+    border: 2px solid #000;
+    font-size: 18px;
+    line-height: 1.25;
 }
