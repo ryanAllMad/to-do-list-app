@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import UnorderdList from "./UnorderedList";
 
 
@@ -22,12 +22,14 @@ const formRef = useRef();
 const onInputChange = (e) => {
         setValid(false); //set aria to valid for submittal
         setDisabled(''); // enable button
-        setItem(e.target.value); //store value of input
+        //store value of input
+        setItem(e.target.value); 
 }
 //TODO add each list item to the list element
 const onFormSubmit = (e) => {
     e.preventDefault();
-    setResult(inputRef.current.value); //add the value of the input to the list
+     //add the value of the input to the list
+        setResult(inputRef.current.value);
     setFeedback(`${inputRef.current.value} added`); //non visual feedback when list item added 
     if(valid !== true) {
         setValid(true);
@@ -35,7 +37,9 @@ const onFormSubmit = (e) => {
     if(disabled !== 'disabled') {
         setDisabled('disabled');
     }
-
+    if(item !== '') {
+        setItem('');
+    }
 }
 
     return (
