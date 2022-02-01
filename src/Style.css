@@ -30,6 +30,41 @@ ul:empty + .empty-state {
 
 /**visually hidden class**/
 
+/**
+footer begin
+**/
+main {
+    padding-bottom: 20%;
+}
+footer {
+    padding: 10% 25%;
+    background: #595959;
+    color: #eee;
+  }
+  footer p, footer a, footer a:visited{
+    color: #eee;
+    text-align: center;
+  }
+  footer a:hover {
+    text-shadow: 1px 0px 5px white, 0px 1px 0px #000;
+  }
+  .site-title {
+    display: block;
+  }
+  @media only screen and (min-width: 900px) {
+    main {
+        padding-bottom: 5%;
+    }
+    img.icon {
+      margin-bottom: -15px;
+  }
+  .site-title {
+    display: inline;
+  }
+  }
+  /**
+  footer end
+  **/
 .visually-hidden {
     position: absolute !important;
     clip: rect(1px, 1px, 1px, 1px) !important;

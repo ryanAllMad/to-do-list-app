@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react';
 import AddItem from "./AddItem";
+import Footer from './Footer';
 
 
 const App = () => {
@@ -28,6 +29,8 @@ const onHeadingSubmit = (e) => {
 }
     
 return (
+    <div className='wrapper'>
+    <main>
     <section aria-labelledby={heading.replaceAll(' ', '-').toLowerCase()}>
     <h1 tabIndex={tabindex} className={`${display} to-do-title`} id={heading.replaceAll(' ', '-').toLowerCase()}> {heading}</h1>
     <form ref={titleFormRef} onSubmit={onHeadingSubmit}>
@@ -42,6 +45,9 @@ return (
     </div>
     <AddItem />
 </section>
+</main>
+<Footer />
+</div>
 );
 }
 
